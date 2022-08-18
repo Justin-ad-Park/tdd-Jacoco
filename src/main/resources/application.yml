@@ -1,0 +1,21 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+test1:
+  enabled: true
+test2:
+  enabled: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+test1:
+  enabled: false
+test2:
+  enabled: false
