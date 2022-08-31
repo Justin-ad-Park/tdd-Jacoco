@@ -5,7 +5,7 @@ public class UserRegister {
     private final UserRepository userRepository;
     private final EmailNotifier emailNotifier;
 
-    public UserRegister(WeakPasswordChecker passwordChecker, UserRepository userRepository, SpyEmailNotifier emailNotifier) {
+    public UserRegister(WeakPasswordChecker passwordChecker, UserRepository userRepository, EmailNotifier emailNotifier) {
         this.passwordChecker = passwordChecker;
         this.userRepository = userRepository;
         this.emailNotifier = emailNotifier;
