@@ -8,7 +8,7 @@ plugins {
 
 group 'org.example'
 version '1.0-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_1_8
+// sourceCompatibility = JavaVersion.VERSION_11
 
 jacoco {
     toolVersion = '0.8.7'
@@ -26,9 +26,11 @@ repositories {
 
 dependencies {
     implementation ('org.springframework.boot:spring-boot-starter-web')
+    implementation ('org.apache.httpcomponents:httpclient')
     testCompile('org.junit.jupiter:junit-jupiter-api')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
     testImplementation ('org.springframework.boot:spring-boot-starter-test')
+    testImplementation ('com.github.tomakehurst:wiremock-jre8:2.33.2')
     testImplementation ('org.mockito:mockito-core:4.0.0')
 
 }
