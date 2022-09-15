@@ -32,6 +32,16 @@ public class UserRegiseterMockTest {
         });
     }
 
+    @DisplayName("약한 암호면 가입 실패")
+    @Test
+    void weakPasswordEx() {
+        BDDMockito.given(mockPasswordChecker.checkPasswordWeak(Mockito.anyString())).willReturn(true);
+
+        assertThrows(WeakPasswordException.class, () -> {
+            userRegister.register("id", "pwd", "email");
+        });
+    }
+
     @DisplayName("회원 가입시 암호 검사가 수행되어야 함")
     @Test
     void checkPassword() {
