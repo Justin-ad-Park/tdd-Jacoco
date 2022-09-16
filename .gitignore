@@ -17,6 +17,7 @@
 *.iml
 *.ipr
 /out/
+/src/main/resources/META-INF/
 
 ### NetBeans ###
 /nbproject/private/
@@ -40,3 +41,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Mac OS X #
+.DS_store
