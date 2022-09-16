@@ -2,11 +2,9 @@ package chap09;
 
 import java.io.IOException;
 import java.net.URI;
-
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
 import java.net.http.HttpTimeoutException;
 import java.time.Duration;
 
@@ -16,7 +14,6 @@ public class CardNumberValidator {
     public CardNumberValidator(String server){
         this.server = server;
     }
-
     public CardValidity validate(String cardNumber) {
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -27,7 +24,7 @@ public class CardNumberValidator {
                 .build();
 
         try {
-            HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
+            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
             switch (response.body()) {
                 case "ok":
@@ -48,3 +45,4 @@ public class CardNumberValidator {
         }
     }
 }
+

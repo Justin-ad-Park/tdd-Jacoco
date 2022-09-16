@@ -4,6 +4,8 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -37,6 +39,11 @@ public class AssertJTest {
         soft.assertThat(1).isGreaterThan(0);
         soft.assertThat(1).isLessThan(2);
         soft.assertAll();
+    }
+
+    @Test
+    void AsTest() {
+        List<Integer> expected = Arrays.asList(1,2,3);
     }
 
 
